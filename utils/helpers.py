@@ -14,5 +14,5 @@ def normalize_date(raw_date : str) -> str:
 # Missing Field Handling
 def clean_text(raw_text : str) -> str:
     if not raw_text or not raw_text.strip():
-        return "NOT FOUND"
-    return(raw_text)
+        return "NULL"
+    return(raw_text.strip())
