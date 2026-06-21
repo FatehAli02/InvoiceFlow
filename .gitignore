@@ -20,6 +20,11 @@ __pycache__/
 logs/
 *.log
 
+invoices/
+*.pdf
+output/
+*.xlsx
+
 # =========================
 # Build / Distribution
 # =========================
