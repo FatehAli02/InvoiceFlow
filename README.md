@@ -51,40 +51,56 @@ Automatically generates `invoice_report.xlsx` with a "Raw Data" sheet and an agg
    
 - Option A: Using Standard 
 
-**Create and activate a virtual environment**
+- **Create and activate a virtual environment**
+
     ```bash
     python -m venv venv
     ```
+
     - On Windows:
+
     ```PowerShell
     venv\Scripts\activate
     ```
+
     - On Mac/Linux:
+
     ```bash
     source venv/bin/activate
     ```
-**Install Dependencies**
+
+- **Install Dependencies**
+
     ```
     pip install -r requirements.txt
     ```
+
 - Option B: Using uv (Extremely Fast)
-- 
-**Create and activate a virtual environment**
+
+- **Create and activate a virtual environment**
+
     ```bash
     uv venv
     ```
+
     - On Windows:
+
     ```Powershell
     .venv\Scripts\activate
     ```
+
     - On Mac/Linux:
+
     ```bash
     source .venv/bin/activate
     ```
+
 **Install Dependencies**
+
     ```
     uv pip install -r requirements.txt
     ```
+
 ## 🎯 Usage
 
 Because of the smart routing in main.py, launching the app is incredibly simple. (Note: If you are using uv, you can replace python with uv run in the commands below).
