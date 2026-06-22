@@ -48,7 +48,9 @@ Automatically generates `invoice_report.xlsx` with a "Raw Data" sheet and an agg
    ```bash
    git clone [https://github.com/fatehali02/InvoiceFlow.git](https://github.com/fatehali02/InvoiceFlow.git)
    cd InvoiceFlow
-- Option A: Using Standard pip
+   
+- Option A: Using Standard 
+
 **Create and activate a virtual environment**
     ```bash
     python -m venv venv
@@ -66,6 +68,7 @@ Automatically generates `invoice_report.xlsx` with a "Raw Data" sheet and an agg
     pip install -r requirements.txt
     ```
 - Option B: Using uv (Extremely Fast)
+- 
 **Create and activate a virtual environment**
     ```bash
     uv venv
@@ -83,8 +86,11 @@ Automatically generates `invoice_report.xlsx` with a "Raw Data" sheet and an agg
     uv pip install -r requirements.txt
     ```
 ## 🎯 Usage
+
 Because of the smart routing in main.py, launching the app is incredibly simple. (Note: If you are using uv, you can replace python with uv run in the commands below).
+
 **Option 1: The Graphical User Interface (GUI)**
+
 Ideal for standard users who prefer a visual dashboard.
 ```bash
 python main.py
@@ -96,6 +102,7 @@ python main.py
 - Click "Process Invoices" to extract the data and view the on-screen summary dashboard.
 
 **Option 2: The Command Line Interface (CLI)**
+
 Ideal for developers and automated terminal scripts.
 ```bash
 python main.py process [".../invoices"]
@@ -103,31 +110,6 @@ python main.py process [".../invoices"]
 - Use the --output or -o flag to specify a custom destination for the Excel file.
 
 - Example: python main.py process ./invoices -o ./reports
-
-## 📁 Project Structure
-InvoiceFlow/
-│
-├── main.py                 # Entry point 
-├── core/
-│   ├── processor.py        # Main pipeline logic
-│   ├── models.py           # Invoice class (OOP)
-│   └── extractor.py        # PDF parsing logic
-├── export/
-│   └── excel_writer.py     # openpyxl logic
-├── cli/
-│   └── app.py              # Typer CLI
-├── gui/
-│   └── app.py              # CustomTkinter UI
-├── utils/
-│   ├── logger.py           # logging setup
-│   └── helpers.py          # date/amount cleaning
-├── logs/
-│   └── app.log
-├── invoices/               # sample input
-├── output/
-│   └── invoice_report.xlsx
-├── requirements.txt
-└── README.md
 
 ## 👨‍💻 Author
 Made by Fateh Ali 
