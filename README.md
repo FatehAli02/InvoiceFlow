@@ -62,7 +62,7 @@ Automatically generates `invoice_report.xlsx` with a "Raw Data" sheet and an agg
     source venv/bin/activate
     ```
 **Install Dependencies**
-    ```bash
+    ```
     pip install -r requirements.txt
     ```
 - Option B: Using uv (Extremely Fast)
@@ -79,7 +79,7 @@ Automatically generates `invoice_report.xlsx` with a "Raw Data" sheet and an agg
     source .venv/bin/activate
     ```
 **Install Dependencies**
-    ```bash
+    ```
     uv pip install -r requirements.txt
     ```
 ## 🎯 Usage
