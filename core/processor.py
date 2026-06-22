@@ -25,5 +25,7 @@ def run_processor(src_folder, dst_folder):
     invoice_list = file_processing(src_folder)
     if invoice_list:
         generate_excel_report(invoice_list, dst_folder)
+        return invoice_list
     else:
         logger.info("No valid invoices were processed. Excel report skipped.")
+        return []
