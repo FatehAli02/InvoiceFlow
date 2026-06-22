@@ -1,6 +1,7 @@
 import openpyxl
 from pathlib import Path
 from core.models import Invoice
+from utils.loggers import logger
 
 def generate_excel_report(invoices : list[Invoice], output_path : Path):
 
@@ -42,4 +43,4 @@ def generate_excel_report(invoices : list[Invoice], output_path : Path):
     file_path = output_path/filename
     output_path.mkdir(parents=True, exist_ok=True)
     wb.save(file_path)
-    print(f"Excel report successfully saved to: {output_path}")
+    logger.info(f"Excel report successfully saved to: {output_path}")
