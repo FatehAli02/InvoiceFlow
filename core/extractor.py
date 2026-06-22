@@ -9,21 +9,11 @@ def data_extraction(file) -> models.Invoice:
         first_page = pdf.pages[0]
         raw_data = first_page.extract_text()
 
-        vend_name = None
         lines = raw_data.split('\n')
-        ignore_words = ["invoice", "date", "bill to", "tax", "amount"]
-        for line in lines[:5]:
-            clean_line = line.strip()
+        first_line = lines[0] if lines else ""
+        vend_name = first_line.replace(" INVOICE", "").strip()
 
-            if not clean_line:
-                continue
-            if clean_line.startswith("#"):
-                continue
-            if not any(word in clean_line.lower() for word in ignore_words):
-                vend_name = clean_line
-                break
-
-        inv_num = re.findall(r"(?:Invoice No|Inv #|Reference|Invoice #|#)\s*:\s*([A-Za-z0-9\-]+)",raw_data)
+        inv_num = re.findall(r"(?:Invoice No|Inv #|Reference|Invoice #|#)\s*:?\s*([A-Za-z0-9\-]+)",raw_data)
         inv_num = inv_num[0] if inv_num else ""
         date = re.findall(r"(?:Date|Invoice Date|Billed On)\s*:\s*([^\n]+)",raw_data)
         date = date[0] if date else ""
@@ -41,9 +31,3 @@ def data_extraction(file) -> models.Invoice:
             date=clean_date,
             total_amount=clean_amt
         )
-
-
-path = input("Enter Path of File:")
-file =Path(path)
-
-print(data_extraction(file))
